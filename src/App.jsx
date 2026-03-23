@@ -11,7 +11,7 @@ import CartPage from "./pages/CartPage";
 import Checkout from "./pages/Checkout";
 import Login from "./pages/Login";
 import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound"; //  404 Page Import
+import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import AddedToCartPopup from "./components/AddedToCartPopup"; 
 import Footer from "./components/Footer";
@@ -55,8 +55,7 @@ const AppContent = () => {
             maxWidth: '320px',
           },
           success: {
-            duration: 1,
-            style: { display: 'none', opacity: 0 }
+            duration: 2000,
           },
           error: {
             style: {

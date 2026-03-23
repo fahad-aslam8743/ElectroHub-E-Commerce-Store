@@ -25,11 +25,11 @@ const ReviewSection = () => {
     }
   };
   useEffect(() => {
-    if (isPaused) return; // Stop timer if user is hovering
+    if (isPaused) return;
     const interval = setInterval(() => {
       scroll('right');
-    }, 4000); // Scrolls every 4 seconds
-    return () => clearInterval(interval); // Cleanup on unmount
+    }, 2000);
+    return () => clearInterval(interval);
   }, [isPaused]);
   return (
     <section className="bg-[#f5f5f7] py-24 overflow-hidden">
@@ -56,9 +56,9 @@ const ReviewSection = () => {
         
         <div 
           ref={scrollRef}
-          onMouseEnter={() => setIsPaused(true)} // Pause on PC
+          onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          onTouchStart={() => setIsPaused(true)} // Pause on Mobile touch
+          onTouchStart={() => setIsPaused(true)} 
           onTouchEnd={() => setIsPaused(false)}
           className="flex gap-6 overflow-x-auto pb-12 snap-x snap-mandatory scrollbar-hide no-scrollbar flex-nowrap"
           style={{ scrollBehavior: 'smooth', WebkitOverflowScrolling: 'touch' }}
