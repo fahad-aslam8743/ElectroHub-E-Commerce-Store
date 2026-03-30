@@ -133,11 +133,11 @@ const FeaturedScroller = () => {
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-50">
                   <span className="text-[19px] font-semibold text-[#1d1d1f]">${item.price}</span>
                   <button 
-                    onClick={() => addToCart({ ...item, quantity: 1 })}
-                    className="bg-[#0071e3] text-white px-6 py-2 rounded-full font-medium text-[14px] hover:bg-[#0077ed] active:scale-95 transition-all"
-                  >
-                    Buy
-                  </button>
+                  onClick={(e) => {
+                  const coords = { x: e.clientX, y: e.clientY };
+                  addToCart({ ...item, quantity: 1 }, coords);}}
+                  className="bg-[#0071e3] text-white px-6 py-2 rounded-full font-medium text-[14px] hover:bg-[#0077ed] active:scale-95 transition-all">
+                  Buy</button>
                 </div>
               </div>
             </div>

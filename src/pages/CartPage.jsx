@@ -11,6 +11,7 @@ const CartPage = () => {
     removeFromCart(id);
     toast.error(`${title} removed from bag`, {
       icon: '🗑️',
+      duration : 1000,
       style: { borderRadius: '24px', background: '#1d1d1f', color: '#fff' }
     });
   };

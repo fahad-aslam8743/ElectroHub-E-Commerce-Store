@@ -13,8 +13,9 @@ import Login from "./pages/Login";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
-import AddedToCartPopup from "./components/AddedToCartPopup"; 
+import FlyToCartAnimation from './components/FlyToCartAnimation'
 import Footer from "./components/Footer";
+
 const queryClient = new QueryClient();
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -66,12 +67,7 @@ const AppContent = () => {
         }} 
       />
       
-      <AddedToCartPopup 
-        item={lastAddedItem} 
-        visible={showPopup} 
-        onClose={() => setShowPopup(false)} 
-        cartCount={cartItems?.length || 0}
-      />
+      <FlyToCartAnimation/>
       <Navbar />
       <main className="flex-grow">
         <AnimatePresence mode="wait">

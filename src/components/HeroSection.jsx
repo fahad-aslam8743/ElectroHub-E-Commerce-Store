@@ -10,9 +10,16 @@ const HERO_PRODUCT = {
 };
 const HeroSection = () => {
   const { addToCart } = useCart();
-  const handleAddToCart = () => {
-    toast.dismiss(); 
-    addToCart({ ...HERO_PRODUCT, thumbnail: HERO_PRODUCT.image, quantity: 1 });
+  const handleAddToCart = (e) => {
+    toast.dismiss();
+    const coords = { 
+      x: e.clientX, 
+      y: e.clientY 
+    };
+    addToCart(
+      { ...HERO_PRODUCT, thumbnail: HERO_PRODUCT.image, quantity: 1 }, 
+      coords
+    );
   };
   return (
     <section className="relative w-full min-h-screen lg:min-h-[85vh] flex items-center justify-center bg-white overflow-hidden pt-2 pb-10 lg:pt-24 lg:pb-16">

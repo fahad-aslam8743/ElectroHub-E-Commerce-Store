@@ -6,12 +6,14 @@ const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
   const [imgLoaded, setImgLoaded] = useState(false);
   const handleAdd = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    addToCart({ ...product, quantity: 1 });
-    /* toast.success(`${product.title} added to Bag`, { ... }); 
-    */
-  };
+  e.preventDefault();
+  e.stopPropagation();
+  
+  // Is line se mouse ki location context tak jayegi
+  const coords = { x: e.clientX, y: e.clientY };
+  
+  addToCart(product, coords); 
+};
   return (
     <div className="group relative flex flex-col w-full bg-white rounded-[32px] p-4 md:p-6 transition-all duration-700 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] active:scale-[0.98] h-full border border-transparent hover:border-gray-100">
       
