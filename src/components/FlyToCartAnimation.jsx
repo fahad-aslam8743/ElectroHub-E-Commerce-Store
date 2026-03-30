@@ -5,6 +5,7 @@ const FlyToCartAnimation = () => {
   const { animatingItem } = useCart();
 
   if (!animatingItem) return null;
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
   return (
     <AnimatePresence>
@@ -21,25 +22,25 @@ const FlyToCartAnimation = () => {
           scale: 1,
           borderRadius: "100%"
         }}
-        animate={{ 
-          top: 25, 
-          left: window.innerWidth > 768 ? window.innerWidth - 80 : window.innerWidth - 40, 
-          scale: 0.2,
-          opacity: 0.8,
-          rotate: 360,
+        animate={{
+          top: isMobile ? window.innerHeight - 60 : 25,
+          left: isMobile ? window.innerWidth / 2 + 50 : window.innerWidth - 80, 
+          
+          scale: 0.1,
+          opacity: 0,
+          rotate: 450,
         }}
-        exit={{ opacity: 0, scale: 0 }}
+        exit={{ opacity: 0 }}
         transition={{ 
-          duration: 1.2, 
+          duration: 1.3,
           ease: "anticipate" 
         }}
-        className="pointer-events-none flex items-center justify-center overflow-hidden bg-white/10 backdrop-blur-[2px] rounded-full"
+        className="pointer-events-none flex items-center justify-center bg-white shadow-xl rounded-full border border-gray-100"
       >
         <img 
           src={animatingItem.image} 
           className="w-[80%] h-[80%] object-contain mix-blend-multiply" 
           alt="fly-item"
-          style={{ filter: "drop-shadow(0px 4px 8px rgba(0,0,0,0.1))" }}
         />
       </motion.div>
     </AnimatePresence>
