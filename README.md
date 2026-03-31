@@ -2,7 +2,7 @@
 
 A sophisticated, high-performance shopping experience built with the modern web stack. ElectroHub features user-specific data persistence, seamless state management, and a highly polished UI designed for both desktop and mobile users.
 
-**🔗 Live Demo:** [electro-hub-e-commerce-store.vercel.app](https://electro-hub-e-commerce-store.vercel.app)
+**🔗 Live Demo:** [Live Demo](https://electro-hub-e-commerce-store.vercel.app)
 
 ---
 
