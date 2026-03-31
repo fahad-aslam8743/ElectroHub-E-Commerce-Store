@@ -7,7 +7,7 @@ A sophisticated, high-performance shopping experience built with the modern web 
 ---
 
 ## 👨‍💻 Developed By
-**Fahad Aslam** *Full-Stack Developer | React & Supabase Specialist*
+**Fahad Aslam** *Frontend Developer | React Specialist*
 
 ---
 
